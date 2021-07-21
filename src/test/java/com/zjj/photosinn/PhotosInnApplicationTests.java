@@ -8,6 +8,7 @@ class PhotosInnApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

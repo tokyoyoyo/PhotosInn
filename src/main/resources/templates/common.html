@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="commonHeader">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}"  rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+  <div id="nav" class="bar">
+    <!--导航栏头-->
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark fixed-top">
+
+      <!--  容器头-->
+      <div class="container nav-main">
+
+        <!-- Brand/logo头 -->
+        <div>
+          <a class="navbar-brand" href="#">
+          <img src="https://static.runoob.com/images/mix/bird.jpg" alt="logo" style="width:40px;">
+        </a>
+          <a class="navbar-brand" href="#">PhotosInn</a>
+        </div>
+        <!-- Brand/logo尾 -->
+
+        <!-- 导航菜单头-->
+        <div class="collapse navbar-collapse">
+            <!-- 左Links头 -->
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">主页</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">介绍</a>
+            </li>
+          </ul>
+            <!-- 左Links尾 -->
+
+            <!-- 右Links头 -->
+            <ul class="navbar-nav navbar-right navbar-expand-sm">
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+
+            <!-- 下拉头 -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                用户
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">登录</a>
+                <a class="dropdown-item" href="#">注册</a>
+              </div>
+            </li>
+              <!-- 下拉尾 -->
+          </ul>
+            <!-- 右Links尾 -->
+        </div>
+        <!-- 导航菜单尾-->
+      </div>
+      <!--  容器尾-->
+
+    </nav>
+    <!--导航栏尾-->
+  </div>
+
+  <div th:fragment="commonjs">
+    <script src="jquery.js"></script>
+    <script src="Popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </div>
+</body>
+</html>

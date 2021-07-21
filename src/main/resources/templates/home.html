@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  <div th:replace="common :: commonHeader"></div>
+
+
+</head>
+<body>
+
+<!--导航栏头-->
+<div th:replace="common::#nav"></div>
+
+<br><br><br><br>
+
+
+<div class="container kv-main">
+
+
+  <div class="page-header">
+    <h1>上传图片</h1>
+    <p>单张图片大小不得超过10MB，一次最多发送十张图片</p>
+  </div>
+
+  <form role="form" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+
+<!--    <div class="form-group">-->
+<!--      <label for="exampleInputFile">头像</label>-->
+<!--      <input type="file" name="headerImage" >-->
+<!--      <p class="help-block">Example block-level help text here.</p>-->
+<!--    </div>-->
+
+
+    <div class="form-group">
+      <label for="exampleInputFile"></label>
+      <input type="file" name="photos" multiple id="exampleInputFile">
+      <p class="help-block">可选择多个图片</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">提交</button>
+  </form>
+
+    <img src="#" th:src="@{Photos/visitor/123.jpg}">
+
+</div>
+
+</body>
+</html>

@@ -36,7 +36,10 @@ public class UserController {
         && StringUtils.hasLength(email)
         && !password.isEmpty()
         && password.equals(password_confirmation)){
-            userMapper.insert(new User(name,email,password));
+
+            User user = new User(name, email, password);
+
+            userMapper.insert(user);
 
             return "login";
         }else {

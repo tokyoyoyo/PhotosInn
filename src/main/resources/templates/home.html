@@ -23,14 +23,6 @@
   </div>
 
   <form role="form" th:action="@{/upload}" method="post" enctype="multipart/form-data">
-
-<!--    <div class="form-group">-->
-<!--      <label for="exampleInputFile">头像</label>-->
-<!--      <input type="file" name="headerImage" >-->
-<!--      <p class="help-block">Example block-level help text here.</p>-->
-<!--    </div>-->
-
-
     <div class="form-group">
       <label for="exampleInputFile"></label>
       <input type="file" name="photos" multiple id="exampleInputFile">
@@ -40,9 +32,32 @@
     <button type="submit" class="btn btn-primary">提交</button>
   </form>
 
-    <img src="#" th:src="@{Photos/visitor/123.jpg}">
+  <br><br><br><br>
 
+  <table >
+    <thead>
+    <tr>
+<!--      <th th:text="${list}? 'uuid'"></th>-->
+      <th th:text="${list}? '图片名'"></th>
+<!--      <th th:text="${list}? '预览'"></th>-->
+      <th th:text="${list}? '链接'"></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="photo :${list}">
+<!--      <td th:text="${photo.getUuid()}" ></td>-->
+      <td th:text="${photo.getName()}"></td>
+<!--      <td> <img th:src="${/photo.getPath()+photo.getName()}"></td>-->
+      <td th:text="${photo.getPath()}"></td>
+    </tbody>
+  </table>
+
+<!--  http://localhost/photos/visitor/B4981E.jpg-->
+<!--  http://localhost/photos/visitor/%E5%8B%87%E6%95%A2%E7%8B%97%E7%8B%97.jpg-->
+<!--  <img src="photos/visitor/B4981E.jpg">-->
 </div>
 
+<div th:replace="common :: commonjs"></div>
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:replace="common :: commonHeader"></div>
+</head>
+<body>
+
+<!--导航栏头-->
+<div th:replace="common::#nav"></div>
+!--导航栏尾-->
+<br><br><br><br>  <br><br><br><br>
+
+<div class="container" style="margin-top: 50px;">
+  <form id="register_form" class="form-horizontal" role="form" method="POST" th:action="@{/register}">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h2>创建账号</h2>
+        <label style="color: red" th:text="${msg}"></label>
+        <hr>
+      </div>
+    </div>
+
+<!--    用户名-->
+    <div class="row">
+      <div class="col-md-4 field-label-responsive">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" id="name" placeholder="Username" value="" required="" autocomplete="off">
+          <div id="username_feedback" class="invalid-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+<!--    邮箱-->
+    <div class="row">
+      <div class="col-md-4 field-label-responsive">
+        <label for="email">E-Mail Address</label>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" value="" required="" autocomplete="off">
+          <div id="email_feedback" class="invalid-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+<!--    密码-->
+    <div class="row">
+      <div class="col-md-4 field-label-responsive">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group has-danger">
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required="" autocomplete="off">
+          <div id="password_feedback" class="invalid-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+<!--    确认密码-->
+    <div class="row">
+      <div class="col-md-4 field-label-responsive">
+        <label for="password">Confirm Password</label>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Password" required="" autocomplete="off">
+          <div id="password_confirmation_feedback" class="invalid-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+<!--    注册按钮-->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+<!--        <button class="btn btn-lg btn-login btn-block" type="submit">-->
+<!--          <i class="fa fa-user-plus"></i>-->
+<!--          Register</button>-->
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+
+<!--    跳转到登录页面-->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div role="signup">
+          <a th:href="@{/login}" >Already Registered?</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div th:replace="common :: commonjs"></div>
+</body>
+</html>

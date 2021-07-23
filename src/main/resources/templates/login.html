@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  <div th:replace="common :: commonHeader"></div>
+
+
+
+</head>
+<body>
+
+<!--导航栏头-->
+<div th:replace="common::#nav"></div>
+!--导航栏尾-->
+<br><br><br><br>  <br><br><br><br>
+
+<!--登录框-->
+<div class="container">
+  <div class="row row-centered">
+    <div class="well col-md-6 col-centered">
+      <h2>欢迎登录</h2>
+      <form th:action="@{/login}"  method="post" role="form">
+          <label style="color: red" th:text="${msg}"></label>
+<!--        用户名-->
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" ><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" id="userid" name="name" placeholder="请输入用户名"/>
+        </div>
+
+<!--        密码-->
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" ><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码"/>
+        </div>
+
+        <br/>
+        <button type="submit" class="btn btn-success btn-block">登录</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!--登录框-->
+
+
+<div th:replace="common :: commonjs"></div>
+</body>
+</html>
+

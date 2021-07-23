@@ -1,15 +1,32 @@
 server:
-  port: 80
+  port: 8080
+#  port: 80
 
+web:
+#  upload-path: D:/upload/
+  upload-path: /www/test/
 
 spring:
   servlet:
     multipart:
       max-request-size: 100MB
       max-file-size: 10MB
+  devtools:
+    livereload:
+      port: 35730
 
   datasource:
-    url: jdbc:mysql://localhost:3306/photosinn
-    username: root
-    password: 123456
+    url: jdbc:mysql://localhost:3306/photoinn
+    username: photoinn
+    password: CKZRFYGF4MGJ8jTA
+#    username: root
+#    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+  web:
+    resources:
+#      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/, file:${web.upload-path}
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+
+
+
+

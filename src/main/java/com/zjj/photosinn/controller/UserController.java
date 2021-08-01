@@ -54,13 +54,14 @@ public class UserController {
     @PostMapping("/login")
     public String userLogin(User user, HttpSession session, Model model){
         if(user.getName()==null || user.getPassword()==null){
-            model.addAttribute("msg","必须填写用户名");
+            model.addAttribute("msg","必须填写用户名密码");
             return "login";
         }
         String pw = userMapper.getPasswordByName(user.getName());
 
         if(user.getPassword().equals(pw)){
             model.addAttribute("user",user.getName());
+            session.setAttribute("user",user);
             return "main";
         }else if(pw ==null) {
             model.addAttribute("msg","先给老子注册");

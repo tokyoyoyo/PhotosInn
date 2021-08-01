@@ -1,10 +1,11 @@
 package com.zjj.photosinn.controller;
 
-import com.zjj.photosinn.beans.Photo;
+
+import com.zjj.photosinn.beans.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestPart;
+
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -14,7 +15,13 @@ public class PageController {
 
     @GetMapping(value = {"/","/home"})
     public String home(HttpSession session, Model model){
-        return "home";
+        if (session.getAttribute("user") != null){
+            User user = (User) session.getAttribute("user");
+            model.addAttribute("user",user.getName());
+            return "main";
+        }else {
+            return "home";
+        }
     }
 
 //    @GetMapping("/result")
@@ -35,6 +42,17 @@ public class PageController {
     @GetMapping("/about")
     public String aboutPage(){
         return "about";
+    }
+
+    @GetMapping("/main")
+    public String mainPage(HttpSession session, Model model){
+        if (session.getAttribute("user") != null){
+            User user = (User) session.getAttribute("user");
+            model.addAttribute("user",user.getName());
+            return "main";
+        }else {
+            return "home";
+        }
     }
 
 }
